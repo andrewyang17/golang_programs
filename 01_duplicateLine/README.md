@@ -4,8 +4,8 @@
 
 ## Command
 ```
-go run main.go <...*.txt>
-go run main.go example1.txt example2.txt
+$ go run main.go <...*.txt>
+$ go run main.go example1.txt example2.txt
 ```
 
 ## Logic
