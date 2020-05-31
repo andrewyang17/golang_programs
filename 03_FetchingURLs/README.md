@@ -20,10 +20,8 @@ $ go run main.go https://www.google.com https://godoc.org https://www.youtube.co
 // Return result
 // Time taken, size and url
 
-0.04s   10516 http://35.240.245.27:5000/
 0.14s   12308 https://www.google.com
 0.31s    7292 https://godoc.org
 0.83s  362890 https://www.youtube.com
 0.83s elapsed
-
 ```
