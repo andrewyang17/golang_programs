@@ -47,20 +47,20 @@ func PutBook(r *http.Request) (Book, error) {
 
 	// validate form values
 	if bk.Isbn == "" || bk.Title == "" || bk.Author == "" || p == "" {
-		return bk, errors.New("400. Bad request. All fields must be complete.")
+		return bk, errors.New("400, bad request")
 	}
 
 	// convert form values
 	f64, err := strconv.ParseFloat(p, 32)
 	if err != nil {
-		return bk, errors.New("406. Not Acceptable. Price must be a number.")
+		return bk, errors.New("406. not acceptable")
 	}
 	bk.Price = float32(f64)
 
 	// insert values
 	err = config.Books.Insert(bk)
 	if err != nil {
-		return bk, errors.New("500. Internal Server Error." + err.Error())
+		return bk, errors.New("500, internal server error," + err.Error())
 	}
 	return bk, nil
 }
@@ -74,13 +74,13 @@ func UpdateBook(r *http.Request) (Book, error) {
 	p := r.FormValue("price")
 
 	if bk.Isbn == "" || bk.Title == "" || bk.Author == "" || p == "" {
-		return bk, errors.New("400. Bad Request. Fields can't be empty.")
+		return bk, errors.New("400, bad request")
 	}
 
 	// convert form values
 	f64, err := strconv.ParseFloat(p, 32)
 	if err != nil {
-		return bk, errors.New("406. Not Acceptable. Enter number for price.")
+		return bk, errors.New("406. not acceptable")
 	}
 	bk.Price = float32(f64)
 
